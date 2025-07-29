@@ -1,0 +1,42 @@
+header, header.simple-nav {
+    background-color: var(--black);
+}
+
+img.logo {
+    width: 50px;
+}
+
+div.logo h2 {
+    font-size: 1.2em;
+}
+
+div.logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#avatar {
+    width: 50px;
+}
+
+nav.desktop-nav {
+    font-size: 1em;
+}
+
+header, header.simple-nav, header.header-main {
+    max-height: 70px;
+}
+
+.beta {
+    background-color: var(--purple);
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+@media only screen and (max-width: 600px) {
+    .beta {
+        margin-left: 10px;
+    }
+}

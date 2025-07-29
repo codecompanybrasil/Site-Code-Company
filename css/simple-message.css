@@ -1,0 +1,21 @@
+main h1 {
+    font-size: 3em;
+}
+
+main h3 {
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+main {
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    font-family: 'Work Sans';
+}
+
+@media only screen and (max-width: 1000px) {
+    main * {
+        text-align: center;
+    }
+}

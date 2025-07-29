@@ -1,0 +1,879 @@
+:root {
+    --blue: #007fed;
+    --light-blue: #139ff0;
+    --black-transparent: rgb(153, 153, 153);
+    --message-color: gray;
+}
+
+body {
+    display: flex;
+    overflow-y: hidden;
+    /* display: grid;
+    grid-template-columns: 1fr 3fr; */
+}
+
+* {
+    height: auto;
+    width: auto;
+}
+
+section {
+    background-color: red;
+    margin: 0;
+}
+
+main {
+    background-color: blue;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    flex-grow: 6;
+    /* max-height: 55%; */
+}
+
+#inbox {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    width: 80%;
+    height: calc(auto - 100px);
+    overflow-y: scroll;
+    /* background-color: yellow; */
+}
+
+main::after {
+    content: "";
+    background-color: var(--black-transparent);
+    width: 80%;
+    height: 1px;
+    position: relative;
+    bottom: 0;
+}
+.client-message {
+    margin-left: 10px;
+    justify-content: flex-start;
+}
+
+.client-message .message-content {
+    background-color: gray;
+}
+
+.user-message {
+    margin-right: 10px;
+    justify-content: flex-end;
+}
+
+.message-response {
+    background-color: var(--light-blue);
+    width: 95%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    padding-bottom: 5px;
+    /* padding-left: 10px; */
+
+}
+
+.user-message .message-content, .user-message .message-content-area{
+    background-color: var(--blue) !important;
+}
+
+.client-message .message-content-area {
+    background-color: gray;
+
+}
+
+.message-content-area span {
+    white-space: nowrap;
+}
+
+.message-data {
+    font-family: 'Work Sans';
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.message-data::after {
+    content: '';
+    background-color: black;
+    width: 30%;
+    margin-left: 10px;
+    height: 1px;
+}
+.message-data::before {
+    content: '';
+    background-color: black;
+    width: 30%;
+    margin-right: 10px;
+    height: 1px;
+}
+
+.sender-area {
+    /* background-color: purple; */
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100px; */
+}
+#response-area, #attachment-area {
+    width: 80%;
+    padding: 5px;
+    z-index: 2;
+    background-color: white;
+    border: 1px solid black;
+    font-family: 'Work Sans';
+    border-radius: 5px;
+    min-height: 70px;
+    position: relative;
+    /*top: -80px; */
+    /* margin-right: 50px; */
+    display: flex;
+    justify-self: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-response {
+    width: 100px;
+    height: 70px;
+}
+
+/* .attachment-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Work Sans';
+    align-items: center;
+} */
+
+#end-response, #end-attachment {
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.response-filename {
+    color: var(--blue);
+    text-decoration: none;
+
+}
+
+.close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.sender {
+    /* background-color: brown; */
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.status-client {
+    width: 15px;
+    right: 0;
+    bottom: 0;
+    height: 15px;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: green;
+    border: 0.5px solid rgba(0, 0, 0, 0.637);
+}
+
+#input-sender {
+    border: 2px solid black;
+    border-radius: 10px;
+    font-family: 'Work Sans';
+    width: 60%;
+    padding: 15px;
+}
+
+.sender button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.sender button:hover, header button:hover, .reply-area img:hover {
+    background-color: gray;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.sender button img {
+    max-width: 30px;
+}
+
+.align-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header {
+    position: relative;
+    background-color: white;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    max-height: 80px;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-family: 'DM Sans';
+    /* min-height: 50px; */
+}
+
+header::after {
+    content: "";
+    background-color: var(--black-transparent);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+}
+
+header::before {
+    content: "";
+    background-color: var(--black-transparent);
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    left: -1px;
+    top: 0;
+}
+
+.contact::before {
+    content: "";
+    background-color: var(--black-transparent);
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+
+header button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    right: 40px;
+    transition: all 0.5s;
+}
+
+.reply-area {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.reply-area img{
+    width: 25px;
+    transition: all 0.5s;
+}
+
+.contacts-section {
+    background-color: white;
+    width: 25%;
+    position: relative;
+}
+.search-area {
+    display: flex;
+    position: relative;
+    font-family: 'DM Sans';
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+}
+
+#contacts-section-phone {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .search-area::after {
+    content: "";
+    background-color: var(--black-transparent);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+} */
+
+.search-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+#search {
+    font-family: 'DM Sans';
+}
+.search-content img{
+    max-width: 25px;
+}
+
+.contacts-section::after {
+    content: "";
+    background-color: var(--black-transparent);
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+
+.message-section {
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 75%;
+}
+
+.message-file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.message-image-file {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    gap: 10px;
+    transition: all 0.5s;
+}
+
+.message-image-file img {
+    max-width: 300px;
+    
+}
+
+.message-image-file > div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.check-message img{
+    width: 15px;
+    color: white;
+    position: relative;
+    bottom: -5px;
+    margin-left: 5px;
+}
+
+.message-file:hover {
+    text-decoration: underline;
+}
+
+.picture {
+    height: 50px;
+    width: 50px;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.message-area {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.message {
+    width: 100%;
+}
+
+.message-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 100%; */
+    flex: 1 1 auto;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    gap: 5px;
+    color: white;
+    font-family: 'Work Sans';
+    position: relative;
+}
+
+#contact-button-phone {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin-right: 20px;
+    color: black;
+}
+
+.message-content span {
+    justify-self: flex-start;
+}
+
+.content-response {
+    color: white;
+    font-family: 'Work Sans';
+    font-size: 14px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.content-response-file {
+    text-decoration: underline;
+}
+
+.content-response::after {
+    content: attr(contentResponse);
+}
+
+.message-content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    max-width: 60%;
+    /* padding-top: 1%; */
+}
+
+.horario {
+    font-size: 0.8em;
+    padding-left: 10px;
+    white-space: nowrap;
+    position: relative;
+    bottom: -5px;
+}
+
+#title-header {
+    font-weight: bold;
+    font-size: 1.2em;    
+}
+
+.title-mention {
+    font-size: 0.8em;
+    transition: 0.1s all;
+    color: gray;
+}
+
+.title-mention:hover, .job-choosed a:hover {
+    text-decoration: underline;
+    color: #139ff0;
+}
+
+.job-choosed, .job-choosed-phone {
+    margin-top: 15px;
+    font-size: 0.8em;
+}
+
+.job-choosed-phone {
+    display: none;
+}
+
+.job-choosed a, .job-choosed-phone a {
+    color: black;
+}
+
+.client-img {
+    border-radius: 50%;
+    max-width: 60px;
+    max-height: 60px;
+    /* cursor: pointer; */
+}
+
+.pop-up {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 3;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.363);
+}
+
+.big-client {
+    position: relative;
+    width: 30%;
+}
+
+.big-client a {
+    padding-top: 5px;
+    color: white;
+    text-shadow: 0.5px 0.5px black;
+    text-decoration: none;
+}
+
+.big-client a:hover {
+    text-decoration: underline;
+    text-shadow: unset;
+    color: var(--light-blue);
+}
+
+.big-client img {
+    width: 100%;
+    border-radius: unset;
+    cursor: auto;
+}
+
+.big-client .close {
+    background-color: red;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 50%;
+    border: 1px white solid;
+    font-family: 'DM Sans';
+    font-size: 1.5em;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 10px;
+}
+
+.contact {
+    /* background-color: red; */
+    width: 100%;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 5px;
+    font-family: "Work Sans";
+    transition: all 0.5s;
+}
+
+.contact-phone {
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.contact:hover {
+    background-color: gray;
+}
+
+.contact::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+
+.title-header-contact, .title-response {
+    font-weight: bold;
+    font-size: 0.9em;
+    font-family: 'DM Sans';
+}
+
+.title-mention-contact {
+    text-decoration: none;
+
+}
+.attachment-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.start-attachment {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.response-content {
+    min-width: 200px;
+}
+.file-response {
+    width: 40px;
+    height: 40px;
+}
+
+.contact-content, .response-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Work Sans';
+    justify-content: center;
+    align-items: flex-start;
+}
+
+p.last-message {
+    width: 23ch;
+    overflow: hidden;
+    color: black;
+    font-size: 0.8em;
+    /* overflow-y: hidden; */
+    white-space: nowrap;
+    position: relative;
+}
+
+p.last-message-attachment {
+    width: 20ch;
+    overflow: hidden;
+    color: var(--message-color);
+    font-size: 0.8em;
+    /* overflow-y: hidden; */
+    height: 2ch;
+    position: relative;
+}
+
+span.more-last-message {
+    text-align: center;
+    color: var(--message-color);
+}
+
+#button-emoji {
+    position: relative;
+}
+
+#emoji-menu {
+    background-color: white;
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    width: 100px;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    z-index: 2;
+    row-gap: 5px;
+    padding: 7px;
+    cursor: auto;
+    position: absolute;
+    top: -80px;
+    left: -100px;
+}
+
+span.emoji {
+    cursor: pointer;
+}
+
+.icon-client {
+    margin-right: 20px;
+}
+
+#contacts-section-phone {
+    display: none;
+}
+
+#close-contact-phone {
+    font-family: 'Work Sans';
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    width: 25px;
+    height: 25px;
+
+}
+
+@media only screen and (max-width: 1300px) {
+    #contact-button-phone {
+        display: flex;
+    }
+    .contacts-section {
+        display: none;
+    }
+
+    #contacts-section-phone {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    }
+
+    body {
+        display: block;
+    }
+    .message-section {
+        width: 100%;
+        height: 100%;
+    }
+    #inbox {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #inbox {
+        font-size: 0.9em;
+    }
+
+    .picture {
+        width: 35px;
+        height: 35px;
+    }
+    .status-client {
+        width: 35%;
+        height: 35%;
+    }
+    .message-file img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .message-image-file img {
+        max-width: 200px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    header {
+        align-items: center;
+    }
+    #inbox {
+        font-size: 0.7em;
+    }
+
+    .sender {
+        width: 95%;
+    }
+
+    .content-response {
+        font-size: 12px;
+    }
+
+    .message-content {
+        flex-direction: column;
+    }
+    .message-content-area {
+        max-width: unset;
+    }
+
+    .job-choosed a, .job-choosed-phone a{
+        font-size: 1em;
+    }
+
+    #title-header {
+        font-size: 0.9em;
+    }
+
+    .title-mention {
+        font-size: 0.7em;
+    }
+
+    .reply-area img {
+        width: 20px;
+    }
+
+}
+
+@media only screen and (max-height: 800px) {
+    #inbox {
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header {
+        max-height: unset;
+        justify-content: space-around;
+        padding-left: 3px;
+    }
+    /* .p-title-header {
+        display: flex;
+        flex-direction: column;
+    } */
+    .job-choosed {
+        display: none;
+    }
+    
+    .job-choosed-phone {
+        display: flex;
+        justify-content: center;
+    }
+
+    #contact-button-phone, .icon-client {
+        margin-right: 10px;
+    }
+
+    #contact-button-phone img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .message-image-file img{
+        max-width: 150px;
+    }
+
+    .align-header {
+        justify-content: space-around;
+    }
+
+    #inbox {
+        width: 98%;
+    }
+
+}

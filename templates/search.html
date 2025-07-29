@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar - Equipe de Freelance</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/simple-header.css">
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Freelance</h2>
+                <span class="beta">Beta</span>
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="/search" class="decoration-hover">Jobs</a>
+            <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+            <a href="/inbox" class="decoration-hover" target="_blank">Inbox</a>
+            <!-- <a href="https://discord.com/api/oauth2/authorize?client_id=1066492672182853642&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Fauth%2F&response_type=token&scope=identify">
+                <button class="login-discord neon">
+                    <img src="images/discord-icon.png" alt="Discord Icon">
+                    Login
+                </button>
+            </a> -->
+            <!-- <a href="#">
+                <img src="https://cdn.discordapp.com/avatars/810894152795553863/d8d98dd9b79ee5ef1a41614f8df4d2eb.png?size=1024" alt="Avatar do discord" id="avatar">
+            </a> -->
+        </nav>
+        <nav class="android-nav">
+            <img src="../images/menu.png" alt="Mais opções" id="android-menu">
+            <div class="menu-android">
+                <a href="/search" class="decoration-hover">Jobs</a>
+                <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+                <a href="/inbox" class="decoration-hover" target="_blank">Inbox</a>
+                <!-- <a href="#">
+                    <button class="login-discord neon">
+                        <img src="images/discord-icon.png" alt="Discord Icon">
+                        Login
+                    </button>
+                </a> -->
+                <!-- <a href="#" class="decoration-hover">Minha Conta</a> -->
+            </div>
+        </nav>
+    </header>
+    <div class="job-header">
+        <div class="faixa-header">
+            <h1>Pesquisar jobs</h1>
+        </div>
+        <form action="/" method="get" class="faixa-header">
+            <input type="search" name="search" id="search">
+            <img src="../images/search.png" alt="Icone para pesquisar" id="search-submit">
+            <img src="../images/filtro.png" alt="Icone para abrir o filtro" id="filtro-button">
+        </form>
+        <div class="faixa-header">
+            <nav>
+                <a href="#" class="faixa-header-selected">
+                    Projetos
+                </a>
+                <img src="../images/search.png" alt="Icone para pesquisar" id="search-submit-phone">
+            <img src="../images/filtro.png" alt="Icone para abrir o filtro" id="filtro-button-phone">
+                <!-- <a href="#">
+                    Propostas
+                </a> -->
+            </nav>
+        </div>
+    </div>
+    <main>
+        <div class="main-content">
+            <div class="filter-area">
+                <div class="filter-content">
+                    <div class="filter-block-title">
+                        <h2>Filtro</h2>
+                        <button id="search-filter">
+                            Procurar
+                        </button>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-block-title">
+                            <h3>Tipo do projeto</h3>
+                            <button class="button-clear">
+                                Clear
+                            </button>
+                        </div>
+                        <div class="filter-block-content">
+                            <div class="checkbox">
+                                <input type="checkbox" name="fixed-price" id="fixed-price">
+                                <span>Preço fixo</span>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="hourly-rate" id="hourly-rate">
+                                <span>Preço por hora</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-block-title">
+                            <h3>Preço fixo</h3>
+                            <button class="button-clear">
+                                Clear
+                            </button>
+                        </div>
+                        <div class="filter-block-content">
+                            <div class="price-box">
+                                <span>min</span>
+                                <div class="search-area">
+                                    <span>$</span>
+                                    <input type="number" id="min-price" placeholder="0">
+                                    <span>USD</span>
+                                </div>
+                            </div>
+                            <div class="price-box">
+                                <span>max</span>
+                                <div class="search-area">
+                                    <span>$</span>
+                                    <input type="number" id="max-price" placeholder="1500+">
+                                    <span>USD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-block-title">
+                            <h3>Preço por hora</h3>
+                            <button class="button-clear">
+                                Clear
+                            </button>
+                        </div>
+                        <div class="filter-block-content">
+                            <div class="price-box">
+                                <span>min</span>
+                                <div class="search-area">
+                                    <span>$</span>
+                                    <input type="number" id="min-price" placeholder="0">
+                                    <span>USD</span>
+                                </div>
+                            </div>
+                            <div class="price-box">
+                                <span>max</span>
+                                <div class="search-area">
+                                    <span>$</span>
+                                    <input type="number" id="max-price" placeholder="80+">
+                                    <span>USD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-block-title">
+                            <h3>Habilidades</h3>
+                            <button class="button-clear">
+                                Clear
+                            </button>
+                        </div>
+                        <div class="filter-block-content">
+                            <div class="search-area" style="align-items: center;display: flex;gap: 10px;">
+                                <img src="../images/search.png" alt="Icon de busca">
+                                <input type="text" name="skills-input" id="skills-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-block">
+                        <div class="filter-block-title">
+                            <h3>Linguagens</h3>
+                            <button class="button-clear">
+                                Clear
+                            </button>
+                        </div>
+                        <div class="filter-block-content">
+                            <div class="checkbox">
+                                <input type="checkbox" name="fixed-price" id="fixed-price">
+                                <span>Português</span>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" name="hourly-rate" id="hourly-rate">
+                                <span>Inglês</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="job-area">
+                <div class="result-area">
+                    <h2>Resultados</h2>
+                    <span>1-20 de 1K</span>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <div>
+                            <h2>Convert pics into digital images for promotion</h2>
+                            <div class="job-tags">
+                                <div class="job-tag recrutamento">Recrutamento</div>
+                                <div class="job-tag destaque">Destaque</div>
+                                <div class="job-tag selado">Selado</div>
+                                <div class="job-tag urgente">Urgente</div>
+                            </div>
+                            <!-- <p class="bids">32 Propostas</p> -->
+                            <div class="job-price-phone">
+                                <h3>$18 USD per hour</h3>
+                                <span>Proposta média</span>
+                            </div>
+                        </div>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img-phone">
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title classification-area" style="margin-top: 15px;">
+                        <div class="classification">
+                            <div class="classification-content">
+                                <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                                <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                                <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                                <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                                <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                                <span>0.0</span>
+                            </div>
+                            <div class="classification-content">
+                                <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                                <span>3</span>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <div>
+                            <h2>Convert pics into digital images for promotion</h2>
+                            <div class="job-tags">
+                                <div class="job-tag recrutamento">Recrutamento</div>
+                                <div class="job-tag destaque">Destaque</div>
+                                <div class="job-tag selado">Selado</div>
+                                <div class="job-tag urgente">Urgente</div>
+                            </div>
+                            <div class="job-price-phone">
+                                <h3>$18 USD per hour</h3>
+                                <span>Proposta média</span>
+                            </div>
+                        </div>
+                        <div class="job-price-be-first">
+                            <div class="be-first">
+                                Seja o primeiro!
+                            </div>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img-phone">
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title classification-area" style="margin-top: 15px;">
+                        <div class="classification">
+                            <div class="classification-content">
+                                <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                                <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                                <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                                <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                                <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                                <span>0.0</span>
+                            </div>
+                            <div class="classification-content">
+                                <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                                <span>3</span>
+                            </div>
+                            <div class="classification-content bid-num">
+                                <h3>24 Propostas</h3>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="line-division"></div>
+                <div class="job">
+                    <div class="job-title">
+                        <h2>Restaurant Logo Design</h2>
+                        <div class="job-price">
+                            <h3>$18 USD per hour</h3>
+                            <span>Proposta média</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p>
+                            <span>Hello! We have just purchased a long-standing, legacy restaurant in Tucson, AZ. Some would describe it as an old school steakhouse/wine/martini spot. That said, we'd like to embrace the old school aspects but make it approachable to a younger crowd. The name has morphed from Cork & Cleaver to (Chef's name's) Cork and now will be "The Cork Tucson" with Tucson as almost…</span>
+                            <button class="more">More</button>
+                        </p>
+                    </div>
+                    <nav>
+                        <span class="habilitie">
+                            Grapic Design
+                        </span>
+                        <span class="habilitie">
+                            Logo Design
+                        </span>
+                        <span class="habilitie">
+                            Photoshop
+                        </span>
+                        <span class="habilitie">
+                            Python
+                        </span>
+                        <span class="habilitie">
+                            PHP
+                        </span>
+                    </nav>
+                    <div class="job-title" style="margin-top: 15px;">
+                        <div class="classification">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star-filled.png" alt="Icon de estrela cheia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <img src="../images/star.png" alt="Icon de estrela vazia" class="job-star">
+                            <span>0.0</span>
+                            <img src="../images/chat.png" alt="Icon de quantos comentários o post deu">
+                            <span>3</span>
+                        </div>
+                        <div class="job-details">
+                            <span>2 minutes ago</span>
+                            <img src="../images/salvar.png" alt="Icon para salvar job no seu perfil" class="salvar-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="job-more-area">
+                    <div class="job-more">
+                        <img src="../images/left-arrow.png" alt="Icon para voltar para os trabalhos anteriores" class="job-arrow">
+                        <div class="number-select number-selected">1</div>
+                        <div class="number-select">2</div>
+                        <div class="number-select">3</div>
+                        <div class="number-select">4</div>
+                        <img src="../images/left-arrow.png" alt="Icon para pegar os proximos trabalhos" class="job-arrow" style="transform: rotate(180deg);">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <div class="hidden-filter-area">
+        <div id="close-filter-area">X</div>
+        <div class="filter-area-phone">
+            <div class="filter-content">
+                <div class="filter-block-title">
+                    <h2>Filtro</h2>
+                    <button id="search-filter">
+                        Procurar
+                    </button>
+                </div>
+                <div class="filter-block">
+                    <div class="filter-block-title">
+                        <h3>Tipo do projeto</h3>
+                        <button class="button-clear">
+                            Clear
+                        </button>
+                    </div>
+                    <div class="filter-block-content">
+                        <div class="checkbox">
+                            <input type="checkbox" name="fixed-price" id="fixed-price">
+                            <span>Preço fixo</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" name="hourly-rate" id="hourly-rate">
+                            <span>Preço por hora</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-block">
+                    <div class="filter-block-title">
+                        <h3>Preço fixo</h3>
+                        <button class="button-clear">
+                            Clear
+                        </button>
+                    </div>
+                    <div class="filter-block-content">
+                        <div class="price-box">
+                            <span>min</span>
+                            <div class="search-area">
+                                <span>$</span>
+                                <input type="number" id="min-price" placeholder="0">
+                                <span>USD</span>
+                            </div>
+                        </div>
+                        <div class="price-box">
+                            <span>max</span>
+                            <div class="search-area">
+                                <span>$</span>
+                                <input type="number" id="max-price" placeholder="1500+">
+                                <span>USD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-block">
+                    <div class="filter-block-title">
+                        <h3>Preço por hora</h3>
+                        <button class="button-clear">
+                            Clear
+                        </button>
+                    </div>
+                    <div class="filter-block-content">
+                        <div class="price-box">
+                            <span>min</span>
+                            <div class="search-area">
+                                <span>$</span>
+                                <input type="number" id="min-price" placeholder="0">
+                                <span>USD</span>
+                            </div>
+                        </div>
+                        <div class="price-box">
+                            <span>max</span>
+                            <div class="search-area">
+                                <span>$</span>
+                                <input type="number" id="max-price" placeholder="80+">
+                                <span>USD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-block">
+                    <div class="filter-block-title">
+                        <h3>Habilidades</h3>
+                        <button class="button-clear">
+                            Clear
+                        </button>
+                    </div>
+                    <div class="filter-block-content">
+                        <div class="search-area" style="align-items: center;display: flex;gap: 10px;">
+                            <img src="../images/search.png" alt="Icon de busca">
+                            <input type="text" name="skills-input" id="skills-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-block">
+                    <div class="filter-block-title">
+                        <h3>Linguagens</h3>
+                        <button class="button-clear">
+                            Clear
+                        </button>
+                    </div>
+                    <div class="filter-block-content">
+                        <div class="checkbox">
+                            <input type="checkbox" name="fixed-price" id="fixed-price">
+                            <span>Português</span>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" name="hourly-rate" id="hourly-rate">
+                            <span>Inglês</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Code Company</h2>
+            </a>
+        </div>
+        <div id="contato">
+            <h3>Redes sociais e contato</h3>
+            <a href="https://www.instagram.com/codecompanybrasil/" class="item" target="_blank">
+                <img src="../images/instagram.svg" alt="Email Icon" class="icon">
+                <p>Instagram</p>
+            </a>
+            <a href="https://github.com/Code-Company" class="item" target="_blank">
+                <img src="../images/github.svg" alt="Email Icon" class="icon">
+                <p>Git Hub</p>
+            </a>
+            <a href="mailto:support@codecompany.org" class="item" target="_blank">
+                <img src="../images/envelope.svg" alt="Email Icon" class="icon">
+                <p>support@codecompany.org</p>
+            </a>
+        </div>
+    </footer>
+    <script src="../js/functions.js"></script>
+    <script src="../js/search-job.js"></script>
+    <script>
+        const cookies = getCookies()
+        var design = new DesignController()
+        if (!cookies) {
+            design.loginHeaderCelular(false)
+            design.loginHeader(false)
+        } else {
+            requiringDiscord((response) => {
+                console.log(response.id)
+                design.loginHeader(true, response.avatar, response.id)
+                design.loginHeaderCelular(true)
+            }, cookies.user)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho - Equipe de Freelance</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/simple-header.css">
+    <style>
+        body {
+            font-family: 'Work Sans';
+        }
+
+        h2 {
+            color: white;
+            font-size: 2.2em;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .profile-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .profile-question {
+            font-size: 1.25em;
+            color: white;
+        }
+
+        .profile-response {
+            color: #28a745;
+        }
+
+        form {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .centralizer {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .border {
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 40px;
+        }
+
+        #dinheiro {
+            padding: 5px;
+            background: transparent;
+            border: 1px solid white;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Work Sans';
+        }
+        
+        .bob-gif {
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        @media only screen and (max-width: 400px) {
+            h2 {
+                font-size: 1.8em;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Freelance</h2>
+                <span class="beta">Beta</span>
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="/search" class="decoration-hover">Jobs</a>
+            <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+            <a href="/inbox" class="decoration-hover" target="_blank">Inbox</a>
+            <!-- <a href="https://discord.com/api/oauth2/authorize?client_id=1066492672182853642&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Fauth%2F&response_type=token&scope=identify">
+                <button class="login-discord neon">
+                    <img src="images/discord-icon.png" alt="Discord Icon">
+                    Login
+                </button>
+            </a> -->
+            <!-- <a href="#">
+                <img src="https://cdn.discordapp.com/avatars/810894152795553863/d8d98dd9b79ee5ef1a41614f8df4d2eb.png?size=1024" alt="Avatar do discord" id="avatar">
+            </a> -->
+        </nav>
+        <nav class="android-nav">
+            <img src="../images/menu.png" alt="Mais opções" id="android-menu">
+            <div class="menu-android">
+                <a href="/search" class="decoration-hover">Jobs</a>
+                <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+                <a href="/inbox" class="decoration-hover" target="_blank">Inbox</a>
+                <!-- <a href="#">
+                    <button class="login-discord neon">
+                        <img src="images/discord-icon.png" alt="Discord Icon">
+                        Login
+                    </button>
+                </a> -->
+                <!-- <a href="#" class="decoration-hover">Minha Conta</a> -->
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="centralizer">
+            <h2>Tudo ok, Sua transferência está sendo processada!</h2>
+            <p style="color: white;">O ADM entrará em contato pelo discord para adquirir os dados do pagamento</p>
+            <img src="../images/bob.gif" alt="Bob Esponja fazendo joinha" class="bob-gif">
+        </div>
+        <!-- <div class="centralizer border">
+            <h2>Saque seu dinheiro!</h2>
+            <div class="profile-row">
+                <p class="profile-question">
+                    Saldo:
+                </p>
+                <p class="profile-response" id="nome">
+                    R$50,00
+                </p>
+            </div>
+            <form action="/sacar" method="post">
+                <p class="profile-question">
+                    Informe a quantia desejada
+                </p>
+                <div class="profile-row">
+                    <p class="profile-question">
+                        $
+                    </p>
+                    <input type="number" name="dinheiro" id="dinheiro" value="50.00">
+                </div>
+                <input type="submit" value="Solicitar transferência" class="green-button">
+            </form>
+        </div> -->
+    </main>
+    <footer>
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Code Company</h2>
+            </a>
+        </div>
+        <div id="contato">
+            <h3>Redes sociais e contato</h3>
+            <a href="https://www.instagram.com/codecompanybrasil/" class="item" target="_blank">
+                <img src="../images/instagram.svg" alt="Email Icon" class="icon">
+                <p>Instagram</p>
+            </a>
+            <a href="https://github.com/Code-Company" class="item" target="_blank">
+                <img src="../images/github.svg" alt="Email Icon" class="icon">
+                <p>Git Hub</p>
+            </a>
+            <a href="mailto:support@codecompany.org" class="item" target="_blank">
+                <img src="../images/envelope.svg" alt="Email Icon" class="icon">
+                <p>support@codecompany.org</p>
+            </a>
+        </div>
+    </footer>
+    <script src="../js/functions.js"></script>
+    
+    <script>
+        const cookies = getCookies()
+        var design = new DesignController()
+        if (!cookies) {
+            design.loginHeaderCelular(false)
+            design.loginHeader(false)
+        } else {
+            requiringDiscord((response) => {
+                console.log(response.id)
+                design.loginHeader(true, response.avatar, response.id)
+                design.loginHeaderCelular(true)
+            }, cookies.user)
+        }
+    </script>
+</body>
+</html>

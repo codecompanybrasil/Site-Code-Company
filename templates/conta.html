@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Code Company</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/conta.css">
+    <style>
+        #logout {
+            background-color: #c82333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- <img src="https://cdn.discordapp.com/avatars/810894152795553863/d8d98dd9b79ee5ef1a41614f8df4d2eb.png?size=1024" alt="Avatar do perfil" class="avatar"> -->
+    </header>
+    <main>
+        <div class="profile">
+            <div class="profile-content">
+                <div class="profile-row">
+                    <p class="profile-question">
+                        Nick:
+                    </p>
+                    <p class="profile-response" id="nome">
+                        PHGodoyCosta#5770
+                    </p>
+                </div>
+                <!-- <div class="profile-row">
+                    <p class="profile-question">
+                        Bucks:
+                    </p>
+                    <p class="profile-response">
+                        &#129689; 80 bucks
+                    </p>
+                </div>
+                <div class="profile-row">
+                    <p class="profile-question">
+                        Ranking
+                    </p>
+                    <p class="profile-response">
+                        &#127941; Iniciante
+                    </p>
+                </div> -->
+                <div class="profile-row">
+                    <p class="profile-question">
+                        ID:
+                    </p>
+                    <p class="profile-response" id="id">
+                        810894152795553863
+                    </p>
+                </div>
+                <!-- <div class="profile-row column">
+                    <p class="profile-question">
+                        Linguagens:
+                    </p>
+                    <div class="profile-response tag-main">
+                        <div class="tag-role">
+                            Javascript
+                        </div>
+                        <div class="tag-role">
+                            Javascript
+                        </div>
+                        <div class="tag-role">
+                            Javascript
+                        </div>
+                        <div class="tag-role">
+                            Javascript
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="profile">
+            <div class="profile-content">
+                <h3>Equipe de freelance</h3>
+                <div class="profile-row">
+                    <p class="profile-question">
+                        Jobs feitos:
+                    </p>
+                    <p class="profile-response" id="nome">
+                        2
+                    </p>
+                </div>
+                <div class="profile-row">
+                    <p class="profile-question">
+                        Conta:
+                    </p>
+                    <p class="profile-response" id="id">
+                        R$50,00
+                    </p>
+                </div>
+                <div class="profile-row">
+                    <button class="green-button">
+                        Sacar dinheiro
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="options-profile">
+            <a href="/">
+                <button style="background: transparent;color: white;">↞ Início</button>
+            </a>
+            <a href="/logout">
+                <button id="logout">Logout</button>
+            </a>
+            <!-- <a href="#">
+                <button>Equipe de freelance</button>
+            </a>
+            <a href="#">
+                <button>
+                    Comunidade
+                </button>
+            </a> -->
+        </div>
+    </main>
+    <footer>
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Code Company</h2>
+            </a>
+        </div>
+        <div id="contato">
+            <h3>Redes sociais e contato</h3>
+            <a href="https://www.instagram.com/codecompanybrasil/" class="item" target="_blank">
+                <img src="../images/instagram.svg" alt="Email Icon" class="icon">
+                <p>Instagram</p>
+            </a>
+            <a href="https://github.com/Code-Company" class="item" target="_blank">
+                <img src="../images/github.svg" alt="Email Icon" class="icon">
+                <p>Git Hub</p>
+            </a>
+            <a href="mailto:support@codecompany.org" class="item" target="_blank">
+                <img src="../images/envelope.svg" alt="Email Icon" class="icon">
+                <p>support@codecompany.org</p>
+            </a>
+        </div>
+    </footer>
+    <script src="../js/functions.js"></script>
+    <script>
+        const cookies = getCookies()
+
+        console.log(cookies)
+        if (!cookies) {
+            //window.location.href = "https://codecompany.org/"
+        } else {
+            requiringDiscord(response => {
+                let design = new DesignController()
+                design.loginUserHeader(response.avatar, response.id)
+                design.setProfileInformations(response)
+            }, cookies.user)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Inter&family=Work+Sans:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('../fonts/Oxygen-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--black);
+    position: relative;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: #2B2B2B;
+    --green: #28a745;
+    --purple: #A469FE;
+    --header-height: 15%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+header a {
+    color: white;
+    font-family: 'DM Sans';
+    text-decoration: none;
+    font-size: 1.3em;
+    /* transition: all 1s; */
+}
+
+.green-button {
+    background-color: #28a745;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    padding: 7px;
+    transition: all 0.5s;
+    font-family: 'Work Sans';
+    font-size: 1em;
+}
+
+a.decoration-hover {
+    text-decoration: none;
+    transition: all 1s;
+}
+
+a.decoration-hover:hover {
+    font-size: 1.35em;
+    color: rgb(233, 233, 233);
+}
+
+/* a.decoration-hover::after {
+    content: '';
+    width: 100%;
+    opacity: 0%;
+    height: 1px;
+    display: block;
+    background: white;
+    transition: opacity 1s;
+}
+
+a.decoration-hover:hover::after {
+    content: '';
+    opacity: 100%;
+    width: 0px;
+} */
+
+img.logo {
+    width: 80px;
+}
+
+div.logo a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+    align-items: center;
+    text-decoration: none;
+    gap: 20px;
+    font-family: 'DM Sans';
+}
+
+button.login-discord {
+    padding: 15px;
+    background-color: var(--purple);
+    border: none;
+    margin-left: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "DM Sans";
+    cursor: pointer;
+    border-radius: 14px;
+    font-size: 0.8em;
+}
+
+button.login-discord:hover {
+    text-decoration: none;
+}
+
+button.login-discord img{
+    color: white;
+    width: 30%;
+}
+
+.menu-android button.login-discord {
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    position: relative;
+    height: calc(100% - var(--header-height) - 5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+main .content-main {
+    font-family: 'Work Sans';
+    width: 28%;
+    color: white;
+}
+
+main .content-main h1, .message-section > h1{
+    font-family: 'Work Sans';
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+main .content-main, main .image-main {
+    position: relative;
+    bottom: 10%;
+}
+
+.participe-agora, .button-purple {
+    background-color: var(--purple);
+    border: none;
+    color: white;
+    font-family: 'Work Sans';
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+div.arrow-down, .content-main, .image-main {
+    visibility: hidden;
+}
+
+.image-main {
+    user-select: none;
+}
+
+.neon {
+    transition: all 1s;
+}
+
+.neon:hover {
+    text-decoration: none;
+    
+    border-radius: 16px;
+  
+    box-shadow: inset 0 0 32px 0 var(--purple), 0 0 32px 0 var(--purple);
+    text-shadow: 0 0 8px hsl(0 0% 100% / 0.3), 0 0 32px currentColor;
+  
+    position: relative;
+}
+  
+.neon::before:hover {
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    
+    background-color: var(--purple);
+}
+
+nav.android-nav {
+    display: none;
+    position: relative;
+}
+
+div.arrow-down {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 50px;
+    cursor: pointer;
+    transition: ahll 0.5s;
+}
+
+div.arrow-down img {
+    max-width: 50px;
+}
+
+section {
+    text-align: center;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    font-family: 'Work Sans';
+    font-size: 1em;
+}
+
+#android-menu {
+    cursor: pointer;
+}
+
+.module-border-wrap {
+    height: 100%;
+    max-width: 200px;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 100%);
+    padding: 1px;
+    border-radius: 10px;
+}
+
+.bem-vindo img {
+    border-radius: 10px;
+}
+
+.bem-vindo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
+    background-color: black;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    color: white;
+    position: relative;
+    bottom: 0;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+footer .logo {
+    min-width: 20%;
+}
+
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#contato .item {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#contato .icon {
+    width: 20px;
+}
+
+#contato a {
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-family: 'Work Sans';
+}
+
+#contato h3 {
+    font-family: 'Work Sans';
+    font-size: 2em;
+    padding-bottom: 20px;
+}
+
+.menu-android {
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    z-index: 2;
+    right: 0;
+    justify-content: center;
+    padding: 20px;
+    background-color: #3B3B3B;
+    margin-top: 10px;
+    border-radius: 10px;
+    align-items: center;
+    opacity: 0%;
+    gap: 20px;
+    display: none;
+    transition: all 0.3s;
+}
+
+#avatar {
+    border-radius: 50%;
+    max-width: 80px;
+    border: 1px solid black;
+}
+
+@media only screen and (max-width: 1200px) {
+    nav.android-nav, .menu-android {
+        display: flex;
+    }
+
+    nav.desktop-nav {
+        display: none;
+    }
+
+    a.decoration-hover:hover {
+        font-size: auto;
+        color: rgb(233, 233, 233);
+    }
+
+    section {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        gap: 50px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    div.image-main {
+        display: none;
+    }
+
+    main .content-main {
+        width: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    main .content-main {
+        width: 90%;
+    }
+
+    header {
+        align-items: center;
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header .logo h2 {
+        display: none;
+    }
+    
+    header {
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    header .logo {
+        position: relative;
+        left: 20px;
+    }
+    nav.android-nav {
+        position: relative;
+        right: 30px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    h1 {
+        font-size: 2.5em !important;
+    }
+
+    .bem-vindo img {
+        width: 90%;
+    }
+
+    #contato h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    h1 {
+        font-size: 2em !important;
+    }
+    
+    body {
+        overflow-x: auto;
+    }
+}

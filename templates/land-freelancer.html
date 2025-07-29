@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho - Equipe de Freelance</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/simple-header.css">
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 100px;
+        }
+        
+        .freelance-main {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            width: 80%;
+        }
+        
+        .freelance-main h1, .freelance-main p {
+            color: white;
+            font-family: 'Work Sans';
+            font-size: 2em;
+            text-align: center;
+        }
+        p {
+            font-size: 1.2em !important;
+        }
+        
+        .work-team {
+            max-width: 450px;
+            min-width: 300px;
+        }
+        
+        @media only screen and (max-width: 300px) {
+            .work-team {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Freelance</h2>
+                <span class="beta">Beta</span>
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="https://discord.gg/ddScwkYryg" class="decoration-hover">Jobs</a>
+            <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+            <a href="#" class="decoration-hover">Inbox</a>
+            <!-- <a href="https://discord.com/api/oauth2/authorize?client_id=1066492672182853642&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Fauth%2F&response_type=token&scope=identify">
+                <button class="login-discord neon">
+                    <img src="images/discord-icon.png" alt="Discord Icon">
+                    Login
+                </button>
+            </a> -->
+            <!-- <a href="#">
+                <img src="https://cdn.discordapp.com/avatars/810894152795553863/d8d98dd9b79ee5ef1a41614f8df4d2eb.png?size=1024" alt="Avatar do discord" id="avatar">
+            </a> -->
+        </nav>
+        <nav class="android-nav">
+            <img src="../images/menu.png" alt="Mais opções" id="android-menu">
+            <div class="menu-android">
+                <a href="https://discord.gg/ddScwkYryg" class="decoration-hover">Comunidade</a>
+                <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+                <a href="#contato" class="decoration-hover">Contato</a>
+                <!-- <a href="#">
+                    <button class="login-discord neon">
+                        <img src="images/discord-icon.png" alt="Discord Icon">
+                        Login
+                    </button>
+                </a> -->
+                <!-- <a href="#" class="decoration-hover">Minha Conta</a> -->
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="freelance-main">
+            <h1>Quer participar da equipe de freelance?</h1>
+            <img src="../images/work_team-removebg.png" alt="" class="work-team">
+            <p>No chat de freelance, aperte o botão: Quero Participar!</p>
+            <a href="https://discord.gg/ddScwkYryg">
+                <button class="button-purple neon">
+                    Code Company
+                </button>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Code Company</h2>
+            </a>
+        </div>
+        <div id="contato">
+            <h3>Redes sociais e contato</h3>
+            <a href="https://www.instagram.com/codecompanybrasil/" class="item" target="_blank">
+                <img src="../images/instagram.svg" alt="Email Icon" class="icon">
+                <p>Instagram</p>
+            </a>
+            <a href="https://github.com/Code-Company" class="item" target="_blank">
+                <img src="../images/github.svg" alt="Email Icon" class="icon">
+                <p>Git Hub</p>
+            </a>
+            <a href="mailto:support@codecompany.org" class="item" target="_blank">
+                <img src="../images/envelope.svg" alt="Email Icon" class="icon">
+                <p>support@codecompany.org</p>
+            </a>
+        </div>
+    </footer>
+    <script src="../js/functions.js"></script>
+    
+    <script>
+        const cookies = getCookies()
+        var design = new DesignController()
+        if (!cookies) {
+            design.loginHeaderCelular(false)
+            design.loginHeader(false)
+        } else {
+            requiringDiscord((response) => {
+                console.log(response.id)
+                design.loginHeader(true, response.avatar, response.id)
+                design.loginHeaderCelular(true)
+            }, cookies.user)
+        }
+    </script>
+</body>
+</html>

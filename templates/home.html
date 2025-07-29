@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Company</title>
+    <meta property="og:image" content="https://codecompany/images/banner-code-company.png"/>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Code Company</h2>
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="https://discord.gg/ddScwkYryg" class="decoration-hover">Comunidade</a>
+            <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+            <a href="#contato" class="decoration-hover">Contato</a>
+            <!-- <a href="https://discord.com/api/oauth2/authorize?client_id=1066492672182853642&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Fauth%2F&response_type=token&scope=identify">
+                <button class="login-discord neon">
+                    <img src="images/discord-icon.png" alt="Discord Icon">
+                    Login
+                </button>
+            </a> -->
+            <!-- <a href="#">
+                <img src="https://cdn.discordapp.com/avatars/810894152795553863/d8d98dd9b79ee5ef1a41614f8df4d2eb.png?size=1024" alt="Avatar do discord" id="avatar">
+            </a> -->
+        </nav>
+        <nav class="android-nav">
+            <img src="../images/menu.png" alt="Mais opções" id="android-menu">
+            <div class="menu-android">
+                <a href="https://discord.gg/ddScwkYryg" class="decoration-hover">Comunidade</a>
+                <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+                <a href="#contato" class="decoration-hover">Contato</a>
+                <!-- <a href="#">
+                    <button class="login-discord neon">
+                        <img src="images/discord-icon.png" alt="Discord Icon">
+                        Login
+                    </button>
+                </a> -->
+                <!-- <a href="#" class="decoration-hover">Minha Conta</a> -->
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="content-main">
+            <h1>Comunidade para programadores</h1>
+            <p>
+                Faça <strong>networking</strong> com desenvolvedores experientes! <br><br> Participe de projetos <strong>open source</strong> e tenha a liberdade para montar sua própria equipe!
+                <br><br> Se prepare para entrar de cabeça no mundo DEV
+            </p>
+            <a href="https://discord.gg/ddScwkYryg">
+                <button class="participe-agora neon">
+                    Participe agora!
+                </button>
+            </a>
+        </div>
+        <div class="image-main">
+            <img src="../images/programadores.png" alt="Imagem de programadores">
+
+        </div>
+    </main>
+    <div class="arrow-down">
+        <img src="../images/arrow-down.png" alt="Arrow Down">
+    </div>
+    <section>
+        <div class="bem-vindo">
+            <img src="../images/bem_vindo.png" alt="Imagem de boas vindas">
+        </div>
+        <div class="message-section">
+            <h1>Code Company Brasil</h1>
+            <p>Conheça os melhores cursos gratuitos</p>
+            <br>
+            <p>Fique por dentro do mundo da tecnologia pelo nosso TabNews</p>
+            <br>
+            <p>Participe de eventos ao vivo</p>
+            <br>
+            <p>Monte sua equipe e <strong>crie algo novo</strong></p>
+            <br>
+            <a href="https://discord.gg/ddScwkYryg">
+                <button class="participe-agora neon">
+                    Faça parte
+                </button>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Code Company</h2>
+            </a>
+        </div>
+        <div id="contato">
+            <h3>Redes sociais e contato</h3>
+            <a href="https://www.instagram.com/codecompanybrasil/" class="item" target="_blank">
+                <img src="../images/instagram.svg" alt="Email Icon" class="icon">
+                <p>Instagram</p>
+            </a>
+            <a href="https://github.com/Code-Company" class="item" target="_blank">
+                <img src="../images/github.svg" alt="Email Icon" class="icon">
+                <p>Git Hub</p>
+            </a>
+            <a href="mailto:support@codecompany.org" class="item" target="_blank">
+                <img src="../images/envelope.svg" alt="Email Icon" class="icon">
+                <p>support@codecompany.org</p>
+            </a>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/functions.js"></script>
+    <!-- <script src="js/designControl.js"></script> -->
+    <script>
+        
+        const cookies = getCookies()
+        var design = new DesignController()
+        if (!cookies) {
+            design.loginHeaderCelular(false)
+            design.loginHeader(false)
+        } else {
+            requiringDiscord((response) => {
+                console.log(response.id)
+                design.loginHeader(true, response.avatar, response.id)
+                design.loginHeaderCelular(true)
+            }, cookies.user)
+        }
+
+        window.sr = ScrollReveal({ reset: true })
+
+        sr.reveal('.content-main', {duration: 1000})
+
+        sr.reveal('.image-main', {duration: 2000})
+
+        sr.reveal('div.arrow-down', {duration: 1500})
+
+        //sr.reveal('.products', {duration: 1000})
+    </script>
+</body>
+</html>

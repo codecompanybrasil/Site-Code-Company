@@ -1,0 +1,615 @@
+<?php
+    if ($_SERVER["REQUEST_URI"] == "/inbox") {
+        $thread = false;
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox - Freelance</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/simple-header.css">
+    <link rel="stylesheet" href="/css/chat-message.css">
+</head>
+<body>
+    <div class="contacts-section">
+        <div class="search-area">
+            <!-- <div class="search-content">
+                <img src="images/search.png" alt="Icone de pesquisa">
+                <input type="search" name="search" id="search" placeholder="Pesquise seu cliente">
+            </div> -->
+            <h2>Seus clientes</h2>
+        </div>
+        <div class="contacts-list">
+            <div class="contact">
+                <div class="picture" style="position: relative;width: 60px;height: 60px">
+                    <img src="/images/marilha.jpg" alt="Foto do cliente">
+                    <div class="status-client"></div>
+                </div>
+                <div class="contact-content">
+                    <p>
+                        <span class="title-header-contact">
+                            Marilha Mendonça
+                        </span>
+                        <a href="#">
+                            <span class="title-mention-contact">
+                                @Marilha
+                            </span>
+                        </a>
+                    </p>
+                    <div style="display: flex;gap: 5px;">
+                        <p class="last-message">
+                            Hi there ! How are you? Have you noticed other freelancers' blue badge on their profile and are you also aware of it's benefits? If you have a few minutes, let's talk about it. You can also check this link: https://www.freelancer.com/verified
+                        </p>
+                        <span class="more-last-message">...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="picture" style="position: relative;width: 60px;height: 60px">
+                    <img src="images/marilha.jpg" alt="Foto do cliente">
+                    <div class="status-client"></div>
+                </div>
+                <div class="contact-content">
+                    <p>
+                        <span class="title-header-contact">
+                            Marilha Mendonça
+                        </span>
+                        <a href="#">
+                            <span class="title-mention-contact">
+                                @Marilha
+                            </span>
+                        </a>
+                    </p>
+                    <p class="last-message">
+                        Hi there ! How are you? Have you noticed other freelancers' blue badge on their profile and are you also aware of it's benefits? If you have a few minutes, let's talk about it. You can also check this link: https://www.freelancer.com/verified
+                    </p>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="picture" style="position: relative;width: 60px;height: 60px">
+                    <img src="/images/marilha.jpg" alt="Foto do cliente">
+                    <div class="status-client"></div>
+                </div>
+                <div class="contact-content">
+                    <p>
+                        <span class="title-header-contact">
+                            Marilha Mendonça
+                        </span>
+                        <a href="#">
+                            <span class="title-mention-contact">
+                                @Marilha
+                            </span>
+                        </a>
+                    </p>
+                    <p class="last-message">
+                        Hi there ! How are you? Have you noticed other freelancers' blue badge on their profile and are you also aware of it's benefits? If you have a few minutes, let's talk about it. You can also check this link: https://www.freelancer.com/verified
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+        if ($thread) {
+    ?>
+    <div class="message-section">
+        <header>
+            <div class="align-header">
+                <div id="contact-button-phone">
+                    <img src="/images/black-menu.png" alt="Icon de menu que abre os contatos">
+                </div>
+                <div style="position: relative;" class="icon-client">
+                    <img src="images/marilha.jpg" alt="Foto do cliente" class="client-img">
+                    <div class="status-client"></div>
+                </div>
+                <div style="display: flex;flex-direction: column;justify-content: center;align-items: flex-start;">
+                    <p class="p-title-header">
+                        <span id="title-header">
+                            Marilha Mendonça
+                        </span>
+                        <a href="https://www.freelancer.com/u/code212" target="_blank">
+                            <span class="title-mention">
+                                @Marilha
+                            </span>
+                        </a>
+                    </p>
+                    <p class="job-choosed">
+                        <a href="#">Python script: Convert pdf to .csv / TOP URGENT - START NOW</a>
+                    </p>
+                </div>
+                <!-- <button id="user-menu-button">
+                    <img src="images/pontos.png" alt="Botão para abrir a aba do usuario">
+                </button>
+                <div id="user-menu">
+                    
+                </div> -->
+            </div>
+            <p class="job-choosed-phone">
+                <a href="#">Python script: Convert pdf to .csv / TOP URGENT - START NOW</a>
+            </p>
+        </header>
+        <main>
+            <div id="inbox">
+                <div class="message">
+                    <div class="message-area client-message">
+                        <div class="picture" style="position: relative;">
+                            <img src="images/marilha.jpg" alt="Foto do cliente">
+                            <div class="status-client"></div>
+                        </div>
+                        <div class="message-content-area">
+                            <div class="message-content">
+                                <span>Oi, gatinho, gostei de você!</span>
+                                <div class="horario">
+                                    8:46 AM
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="message-area client-message">
+                        <div class="picture" style="position: relative;"></div>
+                        <div class="message-content-area">
+                            <div class="message-content">
+                            <span>Tudo certo?</span>
+                            <div class="horario">
+                                8:46 AM
+                            </div>
+                        </div>
+                        </div>
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="message-data">
+                    OCT 24, 2022
+                </div>
+                <div class="message">
+                    <div class="message-area user-message">
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                        <div class="message-content-area">
+                            <div class="message-content">
+                                <span>Oi, desculpa, estava dançando</span>
+                                <div style="display: flex;align-self: flex-end;">
+                                    <div class="horario">
+                                        8:46 AM
+                                    </div>
+                                    <div class="check-message">
+                                        <img src="images/double_check.png" alt="Icon que mostra se a mensagem foi entregue e/ou lida">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="picture" style="position: relative;">
+                            <img src="images/logo_marca_branca.png" alt="Foto do cliente">
+                        </div>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="message-area user-message">
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                        <div class="message-content-area">
+                            <div class="message-content">
+                                <span>Terminei meu trabalho. Da uma olhada 😆</span>
+                                <div class="horario">
+                                    8:46 AM
+                                </div>
+                                <div class="check-message">
+                                    <img src="images/check.png" alt="Icon que mostra se a mensagem foi entregue e/ou lida">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="picture" style="position: relative;"></div>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="message-area user-message">
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                        <div class="message-content-area">
+                            <div class="message-content">
+                                <a href="#" class="message-file">
+                                    <img src="images/file-icon.png" alt="Icon de arquivo para download">
+                                    <span>script.py</span>
+                                </a>
+                                <div class="horario">
+                                    8:46 AM
+                                </div>
+                                <div class="check-message">
+                                    <img src="images/square-clock.png" alt="Icon que mostra se a mensagem foi entregue e/ou lida">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="picture" style="position: relative;"></div>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="message-area user-message">
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                        <div class="message-content-area">
+                            <div class="message-content message-image-file">
+                                <a href="#" class="message-image-file">
+                                    <img src="images/universo.jpg" alt="Imagem enviada na mensagem">
+                                    <div>
+                                        <span>universo.jpg</span>
+                                        <div style="display: flex;">
+                                            <div class="horario">
+                                                8:46 AM
+                                            </div>
+                                            <div class="check-message">
+                                                <img src="images/check.png" alt="Icon que mostra se a mensagem foi entregue e/ou lida">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="picture" style="position: relative;"></div>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="message-area client-message">
+                        <div class="picture" style="position: relative;">
+                            <img src="images/marilha.jpg" alt="Foto do cliente">
+                            <div class="status-client"></div>
+                        </div>
+                        <div class="message-content-area">
+                            <div class="message-content message-image-file">
+                                <a href="#" class="message-image-file">
+                                    <img src="images/colors.jpg" alt="Imagem enviada na mensagem">
+                                    <div>
+                                        <span>colors.jpg</span>
+                                        <div style="display: flex;">
+                                            <div class="horario">
+                                                8:46 AM
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="message">
+                    <div class="message-area client-message">
+                        <div class="picture" style="position: relative;"></div>
+                        <div class="message-content">
+                            Oi, gatinho, gostei de você!
+                            <div class="horario">
+                                8:46 AM
+                            </div>
+                        </div>
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                    </div>
+                </div> -->
+                <div class="message">
+                    <div class="message-area user-message">
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                        <div class="message-content-area">
+                            <div class="message-response">
+                                <div class="title-response">
+                                    Code C.
+                                </div>
+                                <div class="content-response">
+                                    Oi, desculpa, estava dançando
+                                </div>
+                            </div>
+                            <div class="message-content">
+                                <span>Respondendo sua mensagem</span>
+                                <div style="display: flex">
+                                    <div class="horario">
+                                        8:46 AM
+                                    </div>
+                                    <div class="check-message">
+                                        <img src="images/double_check.png" alt="Icon que mostra se a mensagem foi entregue e/ou lida">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="picture" style="position: relative;">
+                            <img src="images/logo_marca_branca.png" alt="Foto do cliente">
+                        </div>
+                    </div>
+                </div>
+                <div class="message">
+                    <div class="message-area user-message">
+                        <div class="reply-area">
+                            <img src="images/reply.png" alt="Reply Icon">
+                        </div>
+                        <div class="message-content-area">
+                            <div class="message-response">
+                                <div class="title-response">
+                                    Code C.
+                                </div>
+                                <div class="content-response">
+                                    Oi, desculpa, estava dançando
+                                </div>
+                            </div>
+                            <div class="message-content">
+                                <span>Ok</span>
+                                <div style="display: flex">
+                                    <div class="horario">
+                                        8:46 AM
+                                    </div>
+                                    <div class="check-message">
+                                        <img src="images/double_check.png" alt="Icon que mostra se a mensagem foi entregue e/ou lida">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="picture" style="position: relative;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="attachment-area" style="display: none;">
+                <!-- <div class="start-attachment">
+                    <img src="images/banner-code-company.png" alt="Imagem dentro do reply" class="img-response">
+                    <div class="attachment-content">
+                        <a href="#" class="response-filename">imagem.jpg</a>
+                        <span>Attachment</span>
+                    </div>
+                </div>
+                <div id="end-attachment">
+                    <img src="images/simple-close.png" alt="Icon para fechar o response" class="close" id="close-response-attachment">
+                </div> -->
+            </div>
+            <div id="response-area" style="display: none">
+                <div class="response-content">
+                    <p>
+                        <span class="title-header-contact" id="title-response"></span>
+                    </p>
+                    <a href="#" class="response-filename" id="response-content-text">script.py</a>
+                    <!-- <p class="last-message">
+                        Hi there ! How are you? Have you noticed other freelancers' blue badge on their profile and are you also aware of it's benefits? If you have a few minutes, let's talk about it. You can also check this link: https://www.freelancer.com/verified
+                    </p> -->
+                </div>
+                <div id="end-response">
+                        <img src="images/file-icon.png" alt="Icon para arquivo" class="file-response">
+                        <img src="images/banner-code-company.png" alt="Imagem dentro do reply" class="img-response">
+                    <img src="images/simple-close.png" alt="Icon para fechar o response" class="close" id="close-response-area">
+                </div>
+            </div>
+        </main>
+        <div class="sender-area">
+            <!-- <div id="attachment-area">
+                <div class="start-attachment">
+                    <img src="images/banner-code-company.png" alt="Imagem dentro do reply" class="img-response">
+                    <div class="attachment-content">
+                        <a href="#" class="response-filename">imagem.jpg</a>
+                        <span>Attachment</span>
+                    </div>
+                </div>
+                <div id="end-attachment">
+                    <img src="images/simple-close.png" alt="Icon para fechar o response" class="close" id="close-response-attachment">
+                </div>
+            </div> -->
+            
+            <div id="response-area" style="display: none">
+                <div class="response-content">
+                    <p>
+                        <span class="title-header-contact">
+                            Marilha Mendonça
+                        </span>
+                    </p>
+                    <a href="#" class="response-filename">script.py</a>
+                     <p class="last-message">
+                        Hi there ! How are you? Have you noticed other freelancers' blue badge on their profile and are you also aware of it's benefits? If you have a few minutes, let's talk about it. You can also check this link: https://www.freelancer.com/verified
+                    </p>
+                </div>
+                <div id="end-response">
+                     <img src="images/file-icon.png" alt="Icon para arquivo" class="file-response">
+                     <img src="images/banner-code-company.png" alt="Imagem dentro do reply" class="img-response">
+                    <img src="images/simple-close.png" alt="Icon para fechar o response" class="close" id="close-response-area">
+                </div>
+            </div>
+            <div class="sender">
+                <button id="files">
+                    <input type="file" name="file-message" id="file-message" style="display: none;">
+                    <img src="images/clips.png" alt="Icon para adicionar arquivos">
+                </button>
+                <!-- <input type="text" id="input-sender" placeholder="Digite sua mensagem"> -->
+                <textarea name="input-sender" id="input-sender" cols="30" rows="1" style="resize: none;"  placeholder="Digite sua mensagem"></textarea>
+                <button id="button-emoji">
+                    <div id="emoji-menu">
+                        <span class="emoji">😃</span>
+                        <span class="emoji">😂</span>
+                        <span class="emoji">😍</span>
+                        <span class="emoji">😄</span>
+                        <span class="emoji">😜</span>
+                        <span class="emoji">😧</span>
+                        <span class="emoji">👍</span>
+                        <span class="emoji">❤️</span>
+                    </div>
+                    <img src="images/emoji.png" alt="Icon para adicionar emojis" id="emoji">
+                </button>
+                <button id="send">
+                    <img src="images/send.png" alt="Icon para enviar mensagens">
+                </button>
+            </div>
+        </div>
+    </div>
+    <?php
+        } else {
+
+    ?>
+    <header class="header-inbox">
+        <div class="align-header">
+            <div id="contact-button-phone">
+                <img src="/images/black-menu.png" alt="Icon de menu que abre os contatos">
+            </div>
+        </div>
+    </header>
+    <div style="display: flex;justify-content: center;align-items: center;width: 80%;height: 80%;font-family: 'Work Sans';background-color: white;">
+        <h2>Inbox</h2>
+    </div>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        header.header-inbox {
+            display: none;
+        }
+
+        @media only screen and (max-width: 1300px) {
+            header.header-inbox {
+                display: block;
+            }
+        }
+    </style>
+    <?php
+        }
+    ?>
+    <div class="pop-up">
+        <div class="big-client">
+            <img src="images/marilha.jpg" alt="Foto do cliente" id="img-pop-up">
+            <a href="#"  id="pop-up-download">Download</a>
+            <div class="close" id="close-pop-up">X</div>
+        </div>
+    </div>
+    <div id="contacts-section-phone">
+        <div class="search-area-phone search-area">
+            <div id="close-contact-phone">X</div>
+            <h2>Seus clientes</h2>
+            <!-- <div class="search-content">
+                <img src="images/search.png" alt="Icone de pesquisa">
+                <input type="search" name="search" id="search" placeholder="Pesquise seu cliente">
+            </div> -->
+        </div>
+        <div class="contacts-list">
+            <div class="contact contact-phone">
+                <div class="picture" style="position: relative;width: 60px;height: 60px">
+                    <img src="images/marilha.jpg" alt="Foto do cliente">
+                    <div class="status-client"></div>
+                </div>
+                <div class="contact-content">
+                    <p>
+                        <span class="title-header-contact">
+                            Marilha Mendonça
+                        </span>
+                        <a href="#">
+                            <span class="title-mention-contact">
+                                @Marilha
+                            </span>
+                        </a>
+                    </p>
+                    <div style="display: flex;gap: 5px;">
+                        <p class="last-message">
+                            Hi there ! How are you? Have you noticed other freelancers' blue badge on their profile and are you also aware of it's benefits? If you have a few minutes, let's talk about it. You can also check this link: https://www.freelancer.com/verified
+                        </p>
+                        <span class="more-last-message">...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact contact-phone">
+                <div class="picture" style="position: relative;width: 60px;height: 60px">
+                    <img src="images/marilha.jpg" alt="Foto do cliente">
+                    <div class="status-client"></div>
+                </div>
+                <div class="contact-content">
+                    <p>
+                        <span class="title-header-contact">
+                            Marilha Mendonça
+                        </span>
+                        <a href="#">
+                            <span class="title-mention-contact">
+                                @Marilha
+                            </span>
+                        </a>
+                    </p>
+                    <p class="last-message">
+                        Hi there ! How are you? Have you noticed other freelancers' blue badge on their profile and are you also aware of it's benefits? If you have a few minutes, let's talk about it. You can also check this link: https://www.freelancer.com/verified
+                    </p>
+                </div>
+            </div>
+            <div class="contact contact-phone">
+                <div class="picture" style="position: relative;width: 60px;height: 60px">
+                    <img src="images/marilha.jpg" alt="Foto do cliente">
+                    <div class="status-client"></div>
+                </div>
+                <div class="contact-content">
+                    <p>
+                        <span class="title-header-contact">
+                            Marilha Mendonça
+                        </span>
+                        <a href="#">
+                            <span class="title-mention-contact">
+                                @Marilha
+                            </span>
+                        </a>
+                    </p>
+                    <p class="last-message">
+                        Hi there ! How are you? Have you noticed other freelancers' blue badge on their profile and are you also aware of it's benefits? If you have a few minutes, let's talk about it. You can also check this link: https://www.freelancer.com/verified
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="js/script.js"></script> -->
+    <?php
+        if ($thread) {
+    ?>
+    <script src="js/chat-message.js"></script>
+    <script>
+        const files = document.getElementById("files")
+        const inputFiles = document.getElementById("file-message")
+        
+        files.addEventListener("click", (e) => {
+            inputFiles.click()
+        })
+    </script>
+    <?php
+        } else {
+
+    ?>
+    <script>
+        const contactButtonPhone = document.getElementById("contact-button-phone")
+        const contactsSection = document.querySelector("#contacts-section-phone")
+        const closeContactPhone = document.getElementById("close-contact-phone")
+
+        contactButtonPhone.addEventListener("click", e => {
+            let { display } = getComputedStyle(contactsSection)
+            if (display == "none") {
+                contactsSection.style.display = "flex"
+            } else {
+                contactsSection.style.display = "none"
+            }
+        })
+
+        closeContactPhone.addEventListener("click", e => {
+            contactsSection.style.display = "none"
+        })
+
+        window.addEventListener("resize", e => {
+            window.location.reload()
+        })
+    </script>
+    <?php
+        }
+    ?>
+</body>
+</html>

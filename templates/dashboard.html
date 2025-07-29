@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Code Company</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/simple-header.css">
+    <link rel="stylesheet" href="../css/simple-message.css">
+    <style>
+        .dashboard {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            border: 1px dotted white;
+            align-items: center;
+            padding: 50px;
+            font-family: 'Work Sans';
+        }
+
+        .dashboard .option {
+            border: 1px solid white;
+            color: white;
+            border-radius: 10px;
+            padding: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.4em;
+            background: transparent;
+            transition: all 0.5s;
+
+        }
+
+        .dashboard .option:hover {
+            padding: 10px;
+            background-color: white;
+            color: black;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .dashboard {
+                flex-direction: column;
+                row-gap: 15px;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Freelance</h2>
+                <span class="beta">Beta</span>
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="/search" class="decoration-hover">Jobs</a>
+            <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+            <a href="/inbox" class="decoration-hover" target="_blank">Inbox</a>
+            <!-- <a href="https://discord.com/api/oauth2/authorize?client_id=1066492672182853642&redirect_uri=http%3A%2F%2F127.0.0.1%3A3000%2Fauth%2F&response_type=token&scope=identify">
+                <button class="login-discord neon">
+                    <img src="images/discord-icon.png" alt="Discord Icon">
+                    Login
+                </button>
+            </a> -->
+            <!-- <a href="#">
+                <img src="https://cdn.discordapp.com/avatars/810894152795553863/d8d98dd9b79ee5ef1a41614f8df4d2eb.png?size=1024" alt="Avatar do discord" id="avatar">
+            </a> -->
+        </nav>
+        <nav class="android-nav">
+            <img src="../images/menu.png" alt="Mais opções" id="android-menu">
+            <div class="menu-android">
+                <a href="/search" class="decoration-hover">Jobs</a>
+                <a href="/freelance" target="_blank" class="decoration-hover">Freelance</a>
+                <a href="/inbox" class="decoration-hover" target="_blank">Inbox</a>
+                <!-- <a href="#">
+                    <button class="login-discord neon">
+                        <img src="images/discord-icon.png" alt="Discord Icon">
+                        Login
+                    </button>
+                </a> -->
+                <!-- <a href="#" class="decoration-hover">Minha Conta</a> -->
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="dashboard">
+            <a href="/search">
+                <button class="option">
+                    Procurar trabalhos
+                </button>
+            </a>
+            <a href="/inbox" target="_blank">
+                <button class="option">
+                    Inbox
+                </button>
+            </a>
+            <a href="/account">
+                <button class="option">
+                    Meu perfil
+                </button>
+            </a>
+        </div>
+        <h3>Equipe de freelance</h3>
+        <a href="https://discord.gg/TrV4rs3xun">
+            <button class="participe-agora neon">
+                Converse com a equipe!
+            </button>
+        </a>
+    </main>
+    <footer>
+        <div class="logo">
+            <a href="/">
+                <img src="../images/logo_marca_branca.png" alt="Logo Code Company" class="logo">
+                <h2>Code Company</h2>
+            </a>
+        </div>
+        <div id="contato">
+            <h3>Redes sociais e contato</h3>
+            <a href="https://www.instagram.com/codecompanybrasil/" class="item" target="_blank">
+                <img src="../images/instagram.svg" alt="Email Icon" class="icon">
+                <p>Instagram</p>
+            </a>
+            <a href="https://github.com/Code-Company" class="item" target="_blank">
+                <img src="../images/github.svg" alt="Email Icon" class="icon">
+                <p>Git Hub</p>
+            </a>
+            <a href="mailto:support@codecompany.org" class="item" target="_blank">
+                <img src="../images/envelope.svg" alt="Email Icon" class="icon">
+                <p>support@codecompany.org</p>
+            </a>
+        </div>
+    </footer>
+    <script src="../js/functions.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        const cookies = getCookies()
+        var design = new DesignController()
+        if (!cookies) {
+            design.loginHeaderCelular(false)
+            design.loginHeader(false)
+        } else {
+            requiringDiscord((response) => {
+                console.log(response.id)
+                design.loginHeader(true, response.avatar, response.id)
+                design.loginHeaderCelular(true)
+            }, cookies.user)
+        }
+    </script>
+</body>
+</html>
